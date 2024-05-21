@@ -4,15 +4,13 @@ export const Reviews = ({ reviews }) => {
     return (
         <div>
             <h3>Отзывы</h3>
-            {reviews.map((review) => (
-                <div key={review.id}>
-                    <ul>
-                        <li>
-                            <Review review={review.text} />
-                        </li>
-                    </ul>
-                </div>
-            ))}
+            <ul>
+                {reviews.map((review) => (
+                <li key={review.id}>
+                    <Review review={review.text} />
+                </li>
+                ))}
+            </ul>
         </div>
     )
 }

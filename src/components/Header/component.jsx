@@ -1,3 +1,3 @@
 export const Header = () => (
-    <span>Header</span>
+    <header>Header</header>
 )
