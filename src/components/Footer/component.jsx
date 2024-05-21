@@ -1,3 +1,3 @@
 export const Footer = () => (
-    <footer>Footer</span>
+    <footer>Footer</footer>
 )
