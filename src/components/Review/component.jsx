@@ -1,3 +1,3 @@
-export const Review = ({ review }) => (
-    <span>{review}</span>
+export const Review = ({ text }) => (
+    <span>{text}</span>
 )
