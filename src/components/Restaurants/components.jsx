@@ -1,19 +1,15 @@
 import { Menu } from "../Menu/component.jsx";
 import { Reviews } from "../Reviews/component.jsx";
 
-export const Restaurants = ({ restaurant }) => {
-    if (!restaurant) {
-        return null
+export const Restaurants = ({ restaurants }) => {
+    if(!restaurants) {
+        return null;
     }
     
-    const { name, menu, reviews } = restaurant
-    
+    const { name, menu, reviews } = restaurants
+
     return (
-        <div style={{
-            border: '2px solid green',
-            borderRadius: '6px',
-            marginBottom: '5px'
-        }}>
+        <div className='restaurants'>
             {Boolean(name?.length) && <h1>{name}</h1>}
             {Boolean(menu?.length) && <Menu menu={menu} />}
             {Boolean(reviews?.length) && <Reviews reviews={reviews} />}

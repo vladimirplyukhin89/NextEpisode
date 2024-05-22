@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.layout {
+    padding: 1rem;
+}
+
+.tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 10px;
+}
+
+.tabs .active {
+    background: tomato;
+}
+
+.restaurants {
+    border: 2px solid green;
+    border-radius: 6px;
+    margin-bottom: 5px;
+}

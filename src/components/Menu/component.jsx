@@ -25,12 +25,7 @@ export const Menu = ({ menu }) => {
     
     
     return (
-        <div
-            style={{
-                border: '2px solid yellow',
-                borderRadius: '6px',
-                marginBottom: '5px'
-            }}>
+        <div>
             {Boolean(menu?.length) && (
                 <>
                     <h3>Меню</h3>
