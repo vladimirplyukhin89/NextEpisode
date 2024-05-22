@@ -16,7 +16,7 @@ export const App = () => {
         <Layout>
             {restaurants?.length
             ?
-            <div>
+            <>
                 <div className='tabs'>
                     {
                         restaurants.map((restaurant, index) => (
@@ -32,7 +32,7 @@ export const App = () => {
                     }
                 </div>
                 {restaurants[activeTab] && <Restaurants restaurants={restaurants[activeTab]} />}
-            </div>
+            </>
             :
             <p>Проблемы с данными</p>}
         </Layout>
