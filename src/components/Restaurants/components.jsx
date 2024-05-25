@@ -9,7 +9,7 @@ export const Restaurants = ({ restaurants }) => {
     const { name, menu, reviews } = restaurants
 
     return (
-        <div className='restaurants'>
+        <div>
             {Boolean(name?.length) && <h1>{name}</h1>}
             {Boolean(menu?.length) && <Menu menu={menu} />}
             {Boolean(reviews?.length) && <Reviews reviews={reviews} />}

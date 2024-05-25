@@ -17,9 +17,3 @@
 .tabs .active {
     background: tomato;
 }
-
-.restaurants {
-    border: 2px solid green;
-    border-radius: 6px;
-    margin-bottom: 5px;
-}

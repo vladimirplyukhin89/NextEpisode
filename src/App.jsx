@@ -18,7 +18,7 @@ export const App = () => {
             {restaurants?.length
             ?
             <>
-                <Tabs openTab={openTab} isActive={activeTab } />
+                <Tabs openTab={openTab} activeTab={activeTab} />
                 {restaurants[activeTab] && <Restaurants restaurants={restaurants[activeTab]} />}
             </>
             :
