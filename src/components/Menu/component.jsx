@@ -16,7 +16,6 @@ export const Menu = ({ menu }) => {
                             <li key={item.id}>
                                 {Boolean(item.name?.length) && <Dish name={item.name}/>}
                                 <Counter />
-                                {item.price}
                             </li>
                         ))}
                     </ul>

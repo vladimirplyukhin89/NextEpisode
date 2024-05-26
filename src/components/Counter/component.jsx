@@ -1,31 +1,13 @@
-import { useState, useEffect, useCallback } from "react";
+import { useCounter } from "../../hooks/useCounter.jsx";
 
-const useCounter = () => {
-    const [count, setCount] = useState(0);
-    const increment = useCallback(() => {
-        setCount((currentCount) => currentCount + 1);
-    }, []);
-    
-    const decrement = useCallback(() => {
-        setCount((currentCount) => currentCount - 1);
-    }, [])
-    
-    return {count, increment, decrement}
-    
-}
-
-export const Counter = ({ min = 0, max = 5 }) => {
+export const Counter = () => {
     const { count, decrement, increment } = useCounter();
-    
-    useEffect(() => {
-        // decrement()
-    }, [])
     
     return (
         <div>
-            <button onClick={decrement} disabled={count === min}>-</button>
+            <button onClick={decrement} disabled={count === 0}>-</button>
             <span>{count}</span>
-            <button onClick={increment} disabled={count === max}>+</button>
+            <button onClick={increment} disabled={count === 5}>+</button>
         </div>
     )
 }
