@@ -4,13 +4,15 @@ import { Layout } from "./components/Layout/component.jsx";
 import { Restaurants } from "./components/Restaurants/components.jsx";
 
 import { restaurants } from "../materials/mock.js";
-import { Tabs } from "./components/Tabs/component.jsx";
+import { RestaurantsTabs } from "./components/RestaurantTabs/component.jsx";
 
 export const App = () => {
-    const [activeTab, setActiveTab] = useState(0);
+    const [activeRestaurantIndex, setActiveRestaurantIndex] = useState(0)
+    const activeRestaurant = restaurants[activeRestaurantIndex]
     
-    function openTab (e) {
-        setActiveTab(Number(e.target.dataset.index))
+    
+    function onTabClick(index) {
+        setActiveRestaurantIndex(index)
     }
     
     return (
@@ -18,8 +20,12 @@ export const App = () => {
             {restaurants?.length
             ?
             <>
-                <Tabs openTab={openTab} activeTab={activeTab} />
-                {restaurants[activeTab] && <Restaurants restaurants={restaurants[activeTab]} />}
+                <RestaurantsTabs
+                    restaurants={restaurants}
+                    onTabClick={onTabClick}
+                    activeTabIndex={activeRestaurantIndex}
+                />
+                <Restaurants restaurants={activeRestaurant} />
             </>
             :
             <p>Проблемы с данными</p>}
