@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { Layout } from "./components/Layout/component.jsx";
 import { Restaurants } from "./components/Restaurants/components.jsx";
+import { Form } from './components/Form/component.jsx';
 
 import { restaurants } from "../materials/mock.js";
 import { RestaurantsTabs } from "./components/RestaurantTabs/component.jsx";
@@ -26,6 +27,7 @@ export const App = () => {
                     activeTabIndex={activeRestaurantIndex}
                 />
                 <Restaurants restaurants={activeRestaurant} />
+                <Form />
             </>
             :
             <p>Проблемы с данными</p>}
