@@ -1,32 +1,36 @@
 import { useReducer } from 'react';
 
-const initialState = {
+const INITIAL_STATE = {
     name: '',
     message: 'It is time to learn',
 }
 
-const reducer = (initialState, { type, payload } = {}) => {
+const reducer = (INITIAL_STATE, { type, payload } = {}) => {
     switch (type) {
         case 'changeName':
             return {
-                ...initialState,
+                ...INITIAL_STATE,
                 name: payload,
             };
         case 'changeMessage':
             return {
-                ...initialState,
+                ...INITIAL_STATE,
                 message: payload,
             };
         case 'reset':
-            return initialState;
+            console.log(INITIAL_STATE);
+            return {
+                name: '',
+                message: ''
+            };
         default:
-            return initialState;
+            return INITIAL_STATE;
     }
 }
 
 export const Form = () => {
-    const [state, dispatch] = useReducer(reducer, initialState);
-    console.log(state)
+    const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
+   
     return (
         <div>
             <div>
@@ -50,6 +54,7 @@ export const Form = () => {
                 </label>
             </div>
             <p>{state.message}</p>
+            <button type={'button'} onClick={() => dispatch({ type: 'reset' })}>Save</button>
         </div>
     )
 }
