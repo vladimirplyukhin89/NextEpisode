@@ -1,60 +1,69 @@
 import { useReducer } from 'react';
+import { Rating } from "../Rating/component.jsx";
 
 const INITIAL_STATE = {
     name: '',
-    message: 'It is time to learn',
+    message: '',
 }
 
-const reducer = (INITIAL_STATE, { type, payload } = {}) => {
+const reducer = (state, { type, payload } = {}) => {
     switch (type) {
-        case 'changeName':
+        case 'setName':
             return {
-                ...INITIAL_STATE,
+                ...state,
                 name: payload,
             };
-        case 'changeMessage':
+        case 'setMessage':
             return {
-                ...INITIAL_STATE,
+                ...state,
                 message: payload,
             };
         case 'reset':
-            console.log(INITIAL_STATE);
-            return {
-                name: '',
-                message: ''
-            };
-        default:
             return INITIAL_STATE;
+        default:
+            return state;
     }
 }
 
 export const Form = () => {
     const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
-   
+    
+    const handleValueChange = (event, type) => dispatch({ type: type, payload: event.target.value });
+    
     return (
-        <div>
-            <div>
-                <label htmlFor={'name'}>
+        <div className='form'>
+            <p>Form</p>
+            <div className='form-label'>
+                <label htmlFor='name'>
                     Name:
                     <input
-                       type={'text'}
-                       value={state.name}
-                       onChange={(event) => dispatch({ type: 'changeName', payload: event.target.value })} id={'name'} />
+                        type={'text'}
+                        value={state.name}
+                        id={'name'}
+                        onChange={(event) => handleValueChange(event,'setName')}
+                    />
                 </label>
+                <p>{state.name}</p>
             </div>
-            <p>{state.name}</p>
-            <div>
-                <label htmlFor={'message'}>
+            
+            <div className='form-label'>
+                <label htmlFor='message'>
                     Message:
                     <textarea
                         value={state.message}
                         id={'message'}
-                        onChange={(event) => dispatch({ type: 'changeMessage', payload: event.target.value })}
+                        onChange={(event) => handleValueChange(event,'setMessage')}
                     ></textarea>
                 </label>
+                <p>{state.message}</p>
             </div>
-            <p>{state.message}</p>
-            <button type={'button'} onClick={() => dispatch({ type: 'reset' })}>Save</button>
+            
+            <Rating />
+            
+            <button
+                type='button'
+                onClick={() => dispatch({ type: 'reset' })}
+            >Save</button>
         </div>
     )
 }
