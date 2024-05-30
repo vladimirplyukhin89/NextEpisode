@@ -99,17 +99,17 @@ export const restaurants = [
             },
         ],
         reviews: [
-            // {
-            //     id: "53b642d7-5e86-4717-a466-0640a1dee076",
-            //     user: "Agata",
-            //     text: "Best bakery",
-            //     rating: 5,
-            // },
+            {
+                id: "53b642d7-5e86-4717-a466-0640a1dee076",
+                user: "Agata",
+                text: "Best bakery",
+                rating: 5,
+            },
         ],
     },
     {
         id: "d9241927-09e1-44f3-8986-a76346869037",
-        name: "",
+        name: "Chef",
         menu: [
             {
                 id: "6c02c2ce-b868-4191-b4a7-8686429f4bac",
