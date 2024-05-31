@@ -4,6 +4,7 @@ import { Rating } from "../Rating/component.jsx";
 const INITIAL_STATE = {
     name: '',
     message: '',
+    rating: 0,
 }
 
 const reducer = (state, { type, payload } = {}) => {
@@ -18,6 +19,11 @@ const reducer = (state, { type, payload } = {}) => {
                 ...state,
                 message: payload,
             };
+        case 'setRating':
+            return {
+                ...state,
+                rating: payload,
+            }
         case 'reset':
             return INITIAL_STATE;
         default:
@@ -58,7 +64,10 @@ export const Form = () => {
                 <p>{state.message}</p>
             </div>
             
-            <Rating />
+            <Rating
+                value={state.rating}
+                onClick={(rating) => dispatch({ type: 'setRating', payload: rating })}
+            />
             
             <button
                 type='button'
