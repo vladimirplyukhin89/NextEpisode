@@ -2,14 +2,13 @@ import { ThemeContext } from "../../context/theme.js";
 import { useContext } from 'react';
 
 export const Header = () => {
-    const theme = useContext(ThemeContext);
-    console.log(theme.theme);
+    const { changeTheme } = useContext(ThemeContext);
     
     return (
         <header>
             <button
                 type='button'
-                onClick={() => {}}
+                onClick={() => changeTheme()}
             >Сменить тему</button>
         </header>
     )

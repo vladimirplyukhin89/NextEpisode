@@ -3,8 +3,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../../context/theme.js";
 
 export const Rating = ({ value, onClick, totalRating = 5 }) => {
-    const theme = useContext(ThemeContext);
-    console.log(theme.theme);
+    const { theme } = useContext(ThemeContext);
  
     return (
         <div style={{marginTop: '40px'}}>
@@ -13,7 +12,7 @@ export const Rating = ({ value, onClick, totalRating = 5 }) => {
                     style={{
                         margin: '5px',
                         padding: '10px',
-                        backgroundColor: `${value === index + 1 ? 'tomato' : ''}`}}
+                        backgroundColor: `${theme ? 'yellowgreen' : 'grey'}`}}
                     disabled={value === index + 1}
                     key={index}
                     value={value}

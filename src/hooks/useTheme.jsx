@@ -1,10 +1,10 @@
 import { useState, useCallback } from 'react';
 
 export const useTheme = () => {
-    const [theme, setTheme] = useState('dark');
+    const [theme, setTheme] = useState(true);
     
-    const changeTheme = useCallback((newTheme) => {
-        setTheme(newTheme);
+    const changeTheme = useCallback(() => {
+        setTheme((prevState) => !prevState);
     }, []);
     
     return { theme, changeTheme }
