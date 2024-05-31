@@ -1,7 +1,11 @@
 import { createArray } from "../../helpers/createArray.js";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/theme.js";
 
 export const Rating = ({ value, onClick, totalRating = 5 }) => {
-    console.log(value)
+    const theme = useContext(ThemeContext);
+    console.log(theme.theme);
+ 
     return (
         <div style={{marginTop: '40px'}}>
             {createArray(totalRating).map((_, index) => (
