@@ -1,4 +1,4 @@
-import { useState, useEffect} from 'react';
+import { useState } from 'react';
 
 import { Layout } from "./components/Layout/component.jsx";
 import { Restaurants } from "./components/Restaurants/components.jsx";
@@ -17,13 +17,7 @@ export const App = () => {
         setActiveRestaurantIndex(index)
     }
     
-    const { progress, handleScroll } = useScroll()
-    
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll)
-        
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [handleScroll])
+    const { progress } = useScroll()
     
     return (
         <Layout>
@@ -36,14 +30,6 @@ export const App = () => {
                     onTabClick={onTabClick}
                     activeTabIndex={activeRestaurantIndex}
                 />
-                <Restaurants restaurants={activeRestaurant} />
-                <Restaurants restaurants={activeRestaurant} />
-                <Restaurants restaurants={activeRestaurant} />
-                <Restaurants restaurants={activeRestaurant} />
-                <Restaurants restaurants={activeRestaurant} />
-                <Restaurants restaurants={activeRestaurant} />
-                <Restaurants restaurants={activeRestaurant} />
-                <Restaurants restaurants={activeRestaurant} />
                 <Restaurants restaurants={activeRestaurant} />
                 <Form />
             </>
