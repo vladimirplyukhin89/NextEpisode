@@ -6,13 +6,17 @@ export const Rating = ({ value, onClick, totalRating = 5 }) => {
     const { theme } = useContext(ThemeContext);
  
     return (
-        <div style={{marginTop: '40px'}}>
+        <div style={{
+            marginTop: '40px',
+          }}>
             {createArray(totalRating).map((_, index) => (
                 <button
                     style={{
                         margin: '5px',
                         padding: '10px',
-                        backgroundColor: `${theme ? 'yellowgreen' : 'grey'}`}}
+                        backgroundColor: `${theme ? 'yellowgreen' : 'grey'}`,
+                        cursor: 'pointer'
+                        }}
                     disabled={value === index + 1}
                     key={index}
                     value={value}

@@ -1,12 +1,9 @@
-import { useContext } from "react";
-import { ThemeContext } from "../../context/theme.js";
-
-export const Tab = ({ title, onClick, isActive }) => {
-    const { theme } = useContext(ThemeContext);
-    
+export const Tab = ({ theme, title, onClick, isActive }) => {
     return (
         <button
-            style={{ backgroundColor: `${theme ? 'yellowgreen' : 'grey'}`}}
+            style={{
+                backgroundColor: `${theme ? 'yellowgreen' : 'grey'}`,
+                cursor: 'pointer'}}
             onClick={onClick}
             disabled={isActive}>
             {title}
