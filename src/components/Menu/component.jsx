@@ -8,7 +8,7 @@ export const Menu = ({ menu }) => {
     if (!menu) {
         return null
     }
-
+    
     return (
         <div>
             {Boolean(menu?.length) && (

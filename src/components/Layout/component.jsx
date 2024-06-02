@@ -16,10 +16,28 @@ export const Layout = ({ children }) => {
             <AuthContext.Provider value={{ currentUser, setCurrentUser }}>
                 <ThemeContext.Provider value={{ theme, changeTheme }}>
                     <div className='layout'>
-                        <div id='modal' className={{position: 'relative', zIndex: 2}} />
-                        <Header/>
-                        {children}
-                        <Footer/>
+                        {openModal && <div
+                            style={{
+                                position: 'fixed',
+                                top: 0,
+                                left: 0,
+                                width: '100%',
+                                height: '100%',
+                                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                                zIndex: 1,
+                            }} />}
+                        <div
+                            id='modal'
+                            style={{
+                                position: 'relative',
+                                zIndex: 2,
+                                width: '100%',
+                                height: '100%',
+                        }}>
+                            <Header/>
+                            {children}
+                            <Footer/>
+                        </div>
                     </div>
                 </ThemeContext.Provider>
             </AuthContext.Provider>
