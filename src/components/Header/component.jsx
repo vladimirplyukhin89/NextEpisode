@@ -1,10 +1,12 @@
 import { ThemeContext } from "../../context/theme.js";
 import { useContext } from 'react';
-import { AuthContext } from "../../context/user.js";
+import { createPortal } from "react-dom";
+import { Modal } from "../Modal/component.jsx";
+import { ModalContext } from "../../context/modal.js";
 
 export const Header = () => {
     const { changeTheme } = useContext(ThemeContext);
-    const { currentUser, setCurrentUser } = useContext(AuthContext);
+    const { openModal, setOpenModal } = useContext(ModalContext)
     
     return (
         <header style={{
@@ -15,21 +17,16 @@ export const Header = () => {
             <button
                 type='button'
                 onClick={changeTheme}
-            >Toggle theme</button>
-            {
-            currentUser?.name?.length
-                ?
-                <button
-                    type='button'
-                    onClick={() => setCurrentUser({name: ''})}
-                >{`${currentUser.name}, sign out`}</button>
-                :
-                <button
-                    type='button'
-                    onClick={() => setCurrentUser({name: 'John Doe'})}
-                >Sing in</button>
-            }
-        
+            >
+                Toggle theme
+            </button>
+            <button
+                type='button'
+                onClick={() => setOpenModal(true)}
+            >
+                Sing in
+            </button>
+        {openModal && (createPortal(<Modal />, document.getElementById('modal')))}
         </header>
     )
 }
