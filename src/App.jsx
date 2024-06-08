@@ -6,8 +6,8 @@ import { Form } from './components/Form/component.jsx';
 
 import { restaurants } from "../materials/mock.js";
 import { RestaurantsTabs } from "./components/RestaurantTabs/component.jsx";
-import { ProgressiveBar } from "./components/ProgressiveBar/component.jsx";
-import { useScroll } from "./hooks/useScroll.jsx";
+import { UserContextProvider } from "./context/user/provider.jsx";
+import { ThemeContextProvider } from "./context/theme/provider.jsx";
 
 export const App = () => {
     const [activeRestaurantIndex, setActiveRestaurantIndex] = useState(0)
@@ -17,24 +17,25 @@ export const App = () => {
         setActiveRestaurantIndex(index)
     }
     
-    const { progress } = useScroll()
-    
     return (
-        <Layout>
-            <ProgressiveBar progress={progress} />
-            {restaurants?.length
-            ?
-            <>
-                <RestaurantsTabs
-                    restaurants={restaurants}
-                    onTabClick={onTabClick}
-                    activeTabIndex={activeRestaurantIndex}
-                />
-                <Restaurants restaurants={activeRestaurant} />
-                <Form />
-            </>
-            :
-            <p>Проблемы с данными</p>}
-        </Layout>
+        <UserContextProvider>
+            <ThemeContextProvider>
+                <Layout>
+                    {restaurants?.length
+                    ?
+                    <>
+                        <RestaurantsTabs
+                            restaurants={restaurants}
+                            onTabClick={onTabClick}
+                            activeTabIndex={activeRestaurantIndex}
+                        />
+                        <Restaurants restaurants={activeRestaurant} />
+                        <Form />
+                    </>
+                    :
+                    <p>Проблемы с данными</p>}
+                </Layout>
+            </ThemeContextProvider>
+        </UserContextProvider>
     )
 }

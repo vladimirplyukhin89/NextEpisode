@@ -1,13 +1,14 @@
 import { useCounter } from "../../hooks/useCounter.jsx";
+import { Button } from "../Button/component.jsx";
 
 export const Counter = () => {
     const { count, decrement, increment } = useCounter();
     
     return (
         <div>
-            <button onClick={decrement} disabled={count === 0}>-</button>
+            <Button onClick={decrement} disabled={count === 0}>-</Button>
             <span>{count}</span>
-            <button onClick={increment} disabled={count === 5}>+</button>
+            <Button onClick={increment} disabled={count === 5}>+</Button>
         </div>
     )
 }
