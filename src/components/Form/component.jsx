@@ -1,5 +1,8 @@
 import { useReducer } from 'react';
 import { Rating } from "../Rating/component.jsx";
+import { Button } from "../Button/component.jsx";
+import { useTheme } from "../../context/theme/hooks.js";
+import { THEMES } from "../../context/theme/constants.js";
 
 const INITIAL_STATE = {
     name: '',
@@ -33,6 +36,7 @@ const reducer = (state, { type, payload } = {}) => {
 
 export const Form = () => {
     const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
+    const { theme } = useTheme();
     
     const handleValueChange = (event, type) => dispatch({ type: type, payload: event.target.value });
     
@@ -69,10 +73,11 @@ export const Form = () => {
                 onClick={(rating) => dispatch({ type: 'setRating', payload: rating })}
             />
             
-            <button
-                type='button'
-                onClick={() => dispatch({ type: 'reset' })}
-            >Save</button>
+            <Button
+                style={{backgroundColor: theme === THEMES.default ? 'grey' : 'orangered'}}
+                onClick={() => dispatch({ type: 'reset' })}>
+                Save
+            </Button>
         </div>
     )
 }

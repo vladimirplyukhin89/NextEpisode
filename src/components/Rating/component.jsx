@@ -1,6 +1,8 @@
 import { createArray } from "../../helpers/createArray.js";
 import { useContext } from "react";
-import { ThemeContext } from "../../context/theme.js";
+import { ThemeContext } from "../../context/theme/theme.js";
+import { Button } from "../Button/component.jsx";
+import { THEMES } from "../../context/theme/constants.js";
 
 export const Rating = ({ value, onClick, totalRating = 5 }) => {
     const { theme } = useContext(ThemeContext);
@@ -10,18 +12,19 @@ export const Rating = ({ value, onClick, totalRating = 5 }) => {
             marginTop: '40px',
           }}>
             {createArray(totalRating).map((_, index) => (
-                <button
+                <Button
                     style={{
                         margin: '5px',
                         padding: '10px',
-                        backgroundColor: `${theme ? 'yellowgreen' : 'grey'}`,
+                        backgroundColor: theme === THEMES.default ? 'grey' : 'orangered',
                         cursor: 'pointer'
                         }}
                     disabled={value === index + 1}
                     key={index}
                     value={value}
                     onClick={() => onClick(index + 1)}
-                >{index + 1}</button>
+                >{index + 1}
+                </Button>
             ))}
         </div>
     )

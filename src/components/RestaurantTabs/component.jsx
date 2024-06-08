@@ -1,6 +1,6 @@
 import { Tab } from "../Tab/component.jsx";
 import { useContext } from "react";
-import { ThemeContext } from "../../context/theme.js";
+import { ThemeContext } from "../../context/theme/theme.js";
 
 export const RestaurantsTabs = ({ restaurants, onTabClick, activeTabIndex  }) => {
     const { theme } = useContext(ThemeContext);

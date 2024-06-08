@@ -37,14 +37,6 @@
     border-radius: 50%;
 }
 
-.tomato {
-    background-color: tomato;
-}
-
-.grey {
-    background-color: grey;
-}
-
 .progressive-bar {
     height: 5px;
     background-color: yellowgreen;
