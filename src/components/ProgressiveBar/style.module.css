@@ -1,0 +1,9 @@
+.root {
+    height: 5px;
+    background-color: yellowgreen;
+    transition: width 0.5s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}

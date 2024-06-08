@@ -1,14 +1,12 @@
 import { ThemeToggler } from "../ThemeToggler/component.jsx";
 import { AuthorizationButton } from "../AuthorizationButton/component.jsx";
 
+import s from './style.module.css'
+
 export const Header = () => {
     
     return (
-        <header style={{
-            display: 'flex',
-            gap: '0.5rem',
-            marginBottom: '10px',
-        }}>
+        <header className={s.root}>
             <ThemeToggler />
             <AuthorizationButton />
         </header>

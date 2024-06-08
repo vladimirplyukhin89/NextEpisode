@@ -1,0 +1,38 @@
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--overlay);
+    z-index: 1;
+}
+
+.wrapper {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.close {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    transition: color 200ms;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: white;
+}
+
+
+
+

@@ -1,17 +1,14 @@
 import { Tab } from "../Tab/component.jsx";
-import { useContext } from "react";
-import { ThemeContext } from "../../context/theme/theme.js";
+
+import s from './style.module.css';
 
 export const RestaurantsTabs = ({ restaurants, onTabClick, activeTabIndex  }) => {
-    const { theme } = useContext(ThemeContext);
-    
     return (
-        <div className='tabs'>
+        <div className={s.root}>
             {
                 restaurants.map((restaurant, index) => (
                     <Tab
                         key={restaurant.id}
-                        theme={theme}
                         title={restaurant.name}
                         onClick={() => onTabClick(index)}
                         isActive={activeTabIndex === index}

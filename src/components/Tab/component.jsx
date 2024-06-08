@@ -1,14 +1,11 @@
-import { THEMES } from "../../context/theme/constants.js";
+import { Button } from "../Button/component.jsx";
 
-export const Tab = ({ theme, title, onClick, isActive }) => {
+export const Tab = ({ title, onClick, isActive }) => {
     return (
-        <button
-            style={{
-                backgroundColor: theme === THEMES.default ? 'grey' : 'orangered',
-                cursor: 'pointer'}}
+        <Button
             onClick={onClick}
             disabled={isActive}>
             {title}
-        </button>
+        </Button>
     )
 }

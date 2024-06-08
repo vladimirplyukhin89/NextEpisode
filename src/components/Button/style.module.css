@@ -1,0 +1,41 @@
+.root {
+    font-size: 15px;
+    padding: 0.5em 1.5em;
+    border-radius: var(--radius-medium);
+    cursor: pointer;
+    width: fit-content;
+}
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.default {
+    background-color: var(--btn-default);
+    color: black;
+}
+
+.default:hover, .default:active {
+    background-color: var(--btn-default-hover);
+}
+.alternative {
+    background-color: var(--btn-alternative);
+    color: white;
+}
+
+.alternative:hover, .alternative:active {
+    background-color: var(--btn-alternative-hover);
+}
+
+@media(min-width: 767px) {
+    .root {
+        font-size: 16px;
+    }
+}
+
+@media(min-width: 998px) {
+    .root {
+        font-size: 18px;
+    }
+}

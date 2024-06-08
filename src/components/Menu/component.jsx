@@ -1,18 +1,20 @@
 import { Dish } from "../Dish/component.jsx";
 
+import s from './style.module.css';
+
 export const Menu = ({ menu }) => {
     if (!menu) {
         return null
     }
     
     return (
-        <div>
+        <div className={s.root}>
             {Boolean(menu?.length) && (
                 <>
-                    <h3>Меню</h3>
-                    <ul>
+                    <h3>Menu</h3>
+                    <ul className={s.menu}>
                         {menu.map((item) => (
-                            <li key={item.id}>
+                            <li className={s.dish} key={item.id}>
                                 {Boolean(item.name?.length) && <Dish name={item.name}/>}
                             </li>
                         ))}

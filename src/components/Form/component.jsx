@@ -4,6 +4,8 @@ import { Button } from "../Button/component.jsx";
 import { useTheme } from "../../context/theme/hooks.js";
 import { THEMES } from "../../context/theme/constants.js";
 
+import s from './style.module.css';
+
 const INITIAL_STATE = {
     name: '',
     message: '',
@@ -41,32 +43,30 @@ export const Form = () => {
     const handleValueChange = (event, type) => dispatch({ type: type, payload: event.target.value });
     
     return (
-        <div className='form'>
-            <p>Form</p>
-            <div className='form-label'>
-                <label htmlFor='name'>
-                    Name:
-                    <input
-                        type={'text'}
-                        value={state.name}
-                        id={'name'}
-                        onChange={(event) => handleValueChange(event,'setName')}
-                    />
-                </label>
-                <p>{state.name}</p>
-            </div>
+        <div className={s.root}>
+            <h2>Form</h2>
+            <label htmlFor='name' className={s.label}>
+                Name:
+                <input
+                    className='input'
+                    type={'text'}
+                    value={state.name}
+                    id={'name'}
+                    onChange={(event) => handleValueChange(event,'setName')}
+                />
+            </label>
             
-            <div className='form-label'>
-                <label htmlFor='message'>
-                    Message:
-                    <textarea
-                        value={state.message}
-                        id={'message'}
-                        onChange={(event) => handleValueChange(event,'setMessage')}
-                    ></textarea>
-                </label>
-                <p>{state.message}</p>
-            </div>
+            <label htmlFor='message' className={s.label}>
+                Message:
+                <textarea
+                    className={s.textarea}
+                    value={state.message}
+                    rows={5}
+                    cols={18}
+                    id={'message'}
+                    onChange={(event) => handleValueChange(event,'setMessage')}
+                ></textarea>
+            </label>
             
             <Rating
                 value={state.rating}
