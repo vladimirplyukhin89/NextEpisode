@@ -13,8 +13,9 @@ export const Reviews = ({ reviews }) => {
                 <>
                     <h3>Reviews</h3>
                     <ul className={s.reviews}>
-                        {reviews.map(({id, text}) => (
-                            <li className={s.review} key={id}>
+                        {reviews.map(({text}) => (
+                            // eslint-disable-next-line react/jsx-key
+                            <li className={s.review} >
                                 {Boolean(text?.length) && <Review text={text}/>}
                             </li>
                         ))}

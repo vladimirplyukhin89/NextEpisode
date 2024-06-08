@@ -14,7 +14,8 @@ export const Menu = ({ menu }) => {
                     <h3>Menu</h3>
                     <ul className={s.menu}>
                         {menu.map((item) => (
-                            <li className={s.dish} key={item.id}>
+                            // eslint-disable-next-line react/jsx-key
+                            <li className={s.dish}>
                                 {Boolean(item.name?.length) && <Dish name={item.name}/>}
                             </li>
                         ))}

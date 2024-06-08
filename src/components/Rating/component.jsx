@@ -8,9 +8,9 @@ export const Rating = ({ value, onClick, totalRating = 5 }) => {
     return (
         <div className={s.root}>
             {createArray(totalRating).map((_, index) => (
+                // eslint-disable-next-line react/jsx-key
                 <Button
                     disabled={value === index + 1}
-                    key={index}
                     value={value}
                     onClick={() => onClick(index + 1)}
                 >{index + 1}

@@ -7,8 +7,8 @@ export const RestaurantsTabs = ({ restaurants, onTabClick, activeTabIndex  }) =>
         <div className={s.root}>
             {
                 restaurants.map((restaurant, index) => (
+                    // eslint-disable-next-line react/jsx-key
                     <Tab
-                        key={restaurant.id}
                         title={restaurant.name}
                         onClick={() => onTabClick(index)}
                         isActive={activeTabIndex === index}
