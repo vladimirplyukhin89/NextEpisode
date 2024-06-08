@@ -1,0 +1,10 @@
+.root {
+    height: 100%;
+    width: 100%;
+    min-height: 30vh;
+}
+
+.root h1 {
+    font-size: 3em;
+    margin: 20px 0;
+}

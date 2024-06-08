@@ -1,3 +1,5 @@
+import s from './style.module.css';
+
 export const Footer = () => (
-    <footer>Footer</footer>
+    <footer className={s.root}>Footer</footer>
 )

@@ -1,0 +1,34 @@
+.root {
+    width: 30vw;
+    height: 25vh;
+    min-width: 250px;
+    min-height: 300px;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    border-radius: 8px;
+}
+
+.default {
+    background-color: var(--modal-default);
+}
+
+.alternative {
+    background-color: var(--modal-alternative);
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}

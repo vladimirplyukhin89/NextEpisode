@@ -3,24 +3,24 @@ export const restaurants = [
         id: "a757a0e9-03c1-4a2a-b384-8ac21dbe2fb2",
         name: "Dishoom",
         menu: [
-            // {
-            //     id: "d75f762a-eadd-49be-8918-ed0daa8dd024",
-            //     name: "Chicken tikka masala",
-            //     price: 12,
-            //     ingredients: ["chicken", "rice"],
-            // },
-            // {
-            //     id: "c3cb8f92-a2ed-4716-92a1-b6ea813e9049",
-            //     name: "Naan",
-            //     price: 3,
-            //     ingredients: ["bread"],
-            // },
-            // {
-            //     id: "bd129641-c0eb-432b-84b6-8b81d2930358",
-            //     name: "Samosa",
-            //     price: 8,
-            //     ingredients: ["chicken", "bread"],
-            // },
+            {
+                id: "d75f762a-eadd-49be-8918-ed0daa8dd024",
+                name: "Chicken tikka masala",
+                price: 12,
+                ingredients: ["chicken", "rice"],
+            },
+            {
+                id: "c3cb8f92-a2ed-4716-92a1-b6ea813e9049",
+                name: "Naan",
+                price: 3,
+                ingredients: ["bread"],
+            },
+            {
+                id: "bd129641-c0eb-432b-84b6-8b81d2930358",
+                name: "Samosa",
+                price: 8,
+                ingredients: ["chicken", "bread"],
+            },
         ],
         reviews: [
             {
@@ -99,17 +99,17 @@ export const restaurants = [
             },
         ],
         reviews: [
-            // {
-            //     id: "53b642d7-5e86-4717-a466-0640a1dee076",
-            //     user: "Agata",
-            //     text: "Best bakery",
-            //     rating: 5,
-            // },
+            {
+                id: "53b642d7-5e86-4717-a466-0640a1dee076",
+                user: "Agata",
+                text: "Best bakery",
+                rating: 5,
+            },
         ],
     },
     {
         id: "d9241927-09e1-44f3-8986-a76346869037",
-        name: "",
+        name: "Chef",
         menu: [
             {
                 id: "6c02c2ce-b868-4191-b4a7-8686429f4bac",

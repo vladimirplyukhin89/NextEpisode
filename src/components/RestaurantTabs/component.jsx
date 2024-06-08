@@ -1,13 +1,14 @@
 import { Tab } from "../Tab/component.jsx";
 
-export const RestaurantsTabs = ({ restaurants, onTabClick, activeTabIndex  }) => {
+import s from './style.module.css';
 
+export const RestaurantsTabs = ({ restaurants, onTabClick, activeTabIndex  }) => {
     return (
-        <div className='tabs'>
+        <div className={s.root}>
             {
                 restaurants.map((restaurant, index) => (
+                    // eslint-disable-next-line react/jsx-key
                     <Tab
-                        key={restaurant.id}
                         title={restaurant.name}
                         onClick={() => onTabClick(index)}
                         isActive={activeTabIndex === index}

@@ -1,5 +1,11 @@
+import { Button } from "../Button/component.jsx";
+
 export const Tab = ({ title, onClick, isActive }) => {
     return (
-        <button onClick={onClick} disabled={isActive}>{title}</button>
+        <Button
+            onClick={onClick}
+            disabled={isActive}>
+            {title}
+        </Button>
     )
 }

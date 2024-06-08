@@ -1,0 +1,17 @@
+.root h3 {
+    font-size: 1.6em;
+}
+
+.reviews {
+    margin: 1.5rem 2.5rem 1.5rem;
+}
+
+.review {
+    list-style: initial;
+    margin-bottom: 0.5rem;
+}
+
+.dish:last-child {
+    margin-bottom: 0;
+}
+
