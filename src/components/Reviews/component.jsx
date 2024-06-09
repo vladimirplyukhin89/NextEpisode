@@ -2,21 +2,21 @@ import { Review } from "../Review/component.jsx";
 
 import s from './style.module.css';
 
-export const Reviews = ({ reviews }) => {
-    if (!reviews) {
+export const Reviews = ({ reviewsIds }) => {
+    if (!reviewsIds) {
         return null
     }
     
     return (
         <div className={s.root}>
-            {Boolean(reviews?.length) && (
+            {Boolean(reviewsIds?.length) && (
                 <>
                     <h3>Reviews</h3>
                     <ul className={s.reviews}>
-                        {reviews.map(({text}) => (
+                        {reviewsIds.map((id) => (
                             // eslint-disable-next-line react/jsx-key
                             <li className={s.review} >
-                                {Boolean(text?.length) && <Review text={text}/>}
+                                <Review reviewId={id}/>
                             </li>
                         ))}
                     </ul>

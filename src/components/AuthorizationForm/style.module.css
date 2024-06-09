@@ -1,8 +1,8 @@
 .root {
     width: 30vw;
     height: 25vh;
-    min-width: 250px;
-    min-height: 300px;
+    min-width: 300px;
+    min-height: 260px;
 }
 
 .container {
@@ -13,7 +13,6 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
-
     border-radius: 8px;
 }
 
