@@ -10,11 +10,11 @@ import { UserContextProvider } from "./context/user/provider.jsx";
 import { ThemeContextProvider } from "./context/theme/provider.jsx";
 
 export const App = () => {
-    const [activeRestaurantIndex, setActiveRestaurantIndex] = useState(0)
-    const activeRestaurant = restaurants[activeRestaurantIndex]
+    const [activeRestaurantIndex, setActiveRestaurantIndex] = useState(0);
+    const activeRestaurant = restaurants[activeRestaurantIndex];
     
     function onTabClick(index) {
-        setActiveRestaurantIndex(index)
+        setActiveRestaurantIndex(index);
     }
     
     return (

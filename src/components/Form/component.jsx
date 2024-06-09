@@ -48,7 +48,7 @@ export const Form = () => {
             <label htmlFor='name' className={s.label}>
                 Name:
                 <input
-                    className='input'
+                    className={s.input}
                     type={'text'}
                     value={state.name}
                     id={'name'}
