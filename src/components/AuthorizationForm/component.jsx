@@ -17,7 +17,7 @@ export const AuthorizationForm = ({ onCancel, onLogin }) => {
                 [s.alternative]: theme === THEMES.alternative,
             })}>
                 <input
-                    className='input'
+                    className={s.input}
                     value={name}
                     onChange={(event) => setName(event.target.value)}
                 />

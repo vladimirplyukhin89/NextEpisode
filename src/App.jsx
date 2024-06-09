@@ -4,32 +4,33 @@ import { Layout } from "./components/Layout/component.jsx";
 import { Restaurants } from "./components/Restaurants/components.jsx";
 import { Form } from './components/Form/component.jsx';
 
-import { restaurants } from "../materials/mock.js";
-import { RestaurantsTabs } from "./components/RestaurantTabs/component.jsx";
 import { UserContextProvider } from "./context/user/provider.jsx";
 import { ThemeContextProvider } from "./context/theme/provider.jsx";
+import { useSelector } from "react-redux";
+import { RestaurantsTabs } from "./components/RestaurantTabs/component.jsx";
 
 export const App = () => {
-    const [activeRestaurantIndex, setActiveRestaurantIndex] = useState(0)
-    const activeRestaurant = restaurants[activeRestaurantIndex]
+    const restaurantIds = useSelector(state => state.restaurants.ids);
+ 
+    const [activeRestaurantId, setActiveRestaurantId] = useState(restaurantIds[0]);
     
-    function onTabClick(index) {
-        setActiveRestaurantIndex(index)
+    function onTabClick(id) {
+        setActiveRestaurantId(id);
     }
     
     return (
         <UserContextProvider>
             <ThemeContextProvider>
                 <Layout>
-                    {restaurants?.length
+                    {restaurantIds?.length
                     ?
                     <>
                         <RestaurantsTabs
-                            restaurants={restaurants}
+                            restaurantIds={restaurantIds}
                             onTabClick={onTabClick}
-                            activeTabIndex={activeRestaurantIndex}
+                            activeTabId={activeRestaurantId}
                         />
-                        <Restaurants restaurants={activeRestaurant} />
+                        <Restaurants restaurantId={activeRestaurantId} />
                         <Form />
                     </>
                     :

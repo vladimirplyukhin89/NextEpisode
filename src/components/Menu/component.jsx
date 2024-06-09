@@ -2,21 +2,21 @@ import { Dish } from "../Dish/component.jsx";
 
 import s from './style.module.css';
 
-export const Menu = ({ menu }) => {
-    if (!menu) {
+export const Menu = ({ menuIds }) => {
+    if (!menuIds) {
         return null
     }
     
     return (
         <div className={s.root}>
-            {Boolean(menu?.length) && (
+            {Boolean(menuIds?.length) && (
                 <>
                     <h3>Menu</h3>
                     <ul className={s.menu}>
-                        {menu.map((item) => (
+                        {menuIds.map((id) => (
                             // eslint-disable-next-line react/jsx-key
                             <li className={s.dish}>
-                                {Boolean(item.name?.length) && <Dish name={item.name}/>}
+                                <Dish dishId={id}/>
                             </li>
                         ))}
                     </ul>

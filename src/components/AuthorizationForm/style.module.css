@@ -1,8 +1,8 @@
 .root {
     width: 30vw;
     height: 25vh;
-    min-width: 250px;
-    min-height: 300px;
+    min-width: 300px;
+    min-height: 260px;
 }
 
 .container {
@@ -13,7 +13,6 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
-
     border-radius: 8px;
 }
 
@@ -32,3 +31,16 @@
     align-items: center;
     gap: 1rem;
 }
+
+.input {
+    height: 40px;
+    font-size: 14px;
+    padding: 0.3em 0.8em;
+    border-radius: var(--radius-small);
+    border: 1px solid transparent;
+}
+
+.input:focus {
+    border: 1px solid var(--border-clr);
+}
+

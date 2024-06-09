@@ -84,10 +84,3 @@ svg {
     height: auto;
     display: block;
 }
-
-.input {
-    height: 40px;
-    font-size: 14px;
-    padding: 0.3em 0.8em;
-    border-radius: var(--radius-small);
-}
